@@ -35,6 +35,7 @@ services:
     image: app/mariadb
     container_name: app.mariadb
     environment:
+      MARIADB_DATABASE: laravel
       MARIADB_USER: laravel
       MARIADB_PASSWORD: laravel
       MARIADB_ROOT_PASSWORD: toor
@@ -54,4 +55,4 @@ services:
   #   ports:
   #     - 8080:8080
 networks:
-  laravel-php-fpm
+  laravel-php-fpm:
