@@ -1,0 +1,57 @@
+services:
+  php-fpm:
+    build:
+      context: etc/devel/docker/php-fpm
+    image: app/php-fpm
+    container_name: app.php-fpm
+    volumes:
+      - ".:/app"
+    networks:
+      - laravel-php-fpm
+    
+  nginx:
+    build:
+      context: etc/devel/docker/nginx
+    image: app/nginx
+    container_name: app.nginx
+    # volumes:
+    #   - "./assets:/var/www/"
+    ports:
+      - 80:80
+    networks:
+      - laravel-php-fpm
+
+  # redis:
+  #   build:
+  #     context: etc/devel/docker/redis
+  #   image: app/redis
+  #   container_name: app.redis
+  #   ports:
+  #     - 6379:6379
+
+  mariadb:
+    build:
+      context: etc/devel/docker/mariadb
+    image: app/mariadb
+    container_name: app.mariadb
+    environment:
+      MARIADB_USER: laravel
+      MARIADB_PASSWORD: laravel
+      MARIADB_ROOT_PASSWORD: toor
+    ports:
+      - 3306:3306
+    networks:
+      - laravel-php-fpm
+
+  # swagger_ui:
+  #   environment:
+  #     - SWAGGER_JSON=./assets/docs/users-api.yml
+  #     - API_URL=http://localhost/docs/users-api.yml
+  #   image: swaggerapi/swagger-ui
+  #   container_name: app.swagger
+  #   volumes:
+  #     - "./assets/docs/users-api.yml:/usr/share/nginx/html/users-api.yml"
+  #   ports:
+  #     - 8080:8080
+networks:
+  laravel-php-fpm
