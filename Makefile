@@ -19,3 +19,6 @@ install:
 	$(SH_PHP) composer install
 
 build: install db
+
+dump-autoload:
+	$(SH_PHP) php composer.phar dump-autoload

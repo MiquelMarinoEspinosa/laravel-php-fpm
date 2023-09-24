@@ -2,8 +2,7 @@
 
 namespace App\Providers;
 
-use Core\Product\Api\InternalProductApi;
-use Core\Product\Api\ProductApi;
+use Core\Product\Infrastructure\Laravel\Config\LaravelProductServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +12,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        $this->app->bind(ProductApi::class, InternalProductApi::class);
+        (new LaravelProductServiceProvider($this->app))->register();
     }
 
     /**
