@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Core\Product\Api\IO\Input\ProductInput;
 use Core\Product\Api\ProductApi;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -16,9 +17,25 @@ class ProductController extends Controller
 
     public function store(Request $request): Response
     {
-        Product::create($request->all());
-        $this->productApi->create();
+        //Product::create($request->all());
+
+
+        $this->productApi->create(
+            $this->buildProductInput($request)
+        );
 
         return new Response('', Response::HTTP_CREATED);
+    }
+
+    private function buildProductInput(Request $request): ProductInput
+    {
+        return new ProductInput(
+            null,
+            $request->name,
+            $request->sku,
+            $request->description,
+            $request->price,
+            $request->quantity
+        );
     }
 }

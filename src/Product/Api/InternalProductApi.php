@@ -2,10 +2,12 @@
 
 namespace Core\Product\Api;
 
+use Core\Product\Api\IO\Input\ProductInput;
+
 final class InternalProductApi implements ProductApi
 {
-    public function create(): void
+    public function create(ProductInput $productInput): void
     {
-        dd('hello world');
+        dd($productInput);
     }
 }

@@ -2,7 +2,9 @@
 
 namespace Core\Product\Api;
 
+use Core\Product\Api\IO\Input\ProductInput;
+
 interface ProductApi
 {
-    public function create(): void;
+    public function create(ProductInput $productInput): void;
 }

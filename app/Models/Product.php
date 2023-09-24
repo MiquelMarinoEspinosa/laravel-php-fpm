@@ -14,6 +14,6 @@ class Product extends Model
         'sku',
         'description',
         'price',
-        'qty'
+        'quantity'
     ];
 }
