@@ -14,3 +14,8 @@ mysql:
 
 db:
 	$(SH_PHP) php artisan migrate
+
+install:
+	$(SH_PHP) composer install
+
+build: install db
