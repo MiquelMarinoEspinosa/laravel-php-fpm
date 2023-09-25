@@ -17,9 +17,6 @@ class ProductController extends Controller
 
     public function store(Request $request): Response
     {
-        //Product::create($request->all());
-
-
         $this->productApi->create(
             $this->buildProductInput($request)
         );
