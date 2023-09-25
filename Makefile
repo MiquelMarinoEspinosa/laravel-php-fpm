@@ -22,3 +22,6 @@ build: install db
 
 dump-autoload:
 	$(SH_PHP) php composer.phar dump-autoload
+
+unit:
+	$(SH_PHP) vendor/phpunit/phpunit/phpunit
