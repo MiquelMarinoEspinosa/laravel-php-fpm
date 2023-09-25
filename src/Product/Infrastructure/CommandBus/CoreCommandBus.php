@@ -1,11 +1,11 @@
 <?php
 
-namespace Core\Shared\Infrastructure\CommandBus;
+namespace Core\Product\Infrastructure\CommandBus;
 
 use Core\Product\Application\Command\CreateProduct\CreateProductCommand;
 use Core\Product\Application\Command\CreateProduct\CreateProductCommandHandler;
-use Core\Shared\Application\Command\Command;
-use Core\Shared\Application\CommandBus\CommandBus;
+use Core\Product\Application\Command\Command;
+use Core\Product\Application\CommandBus\CommandBus;
 
 final class CoreCommandBus implements CommandBus
 {

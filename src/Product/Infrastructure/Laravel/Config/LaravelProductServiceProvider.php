@@ -4,8 +4,8 @@ namespace Core\Product\Infrastructure\Laravel\Config;
 
 use Core\Product\Api\InternalProductApi;
 use Core\Product\Api\ProductApi;
-use Core\Shared\Application\CommandBus\CommandBus;
-use Core\Shared\Infrastructure\CommandBus\CoreCommandBus;
+use Core\Product\Application\CommandBus\CommandBus;
+use Core\Product\Infrastructure\CommandBus\CoreCommandBus;
 use Illuminate\Contracts\Foundation\Application;
 
 final readonly class LaravelProductServiceProvider

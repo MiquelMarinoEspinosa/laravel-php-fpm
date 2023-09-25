@@ -4,7 +4,7 @@ namespace Core\Product\Api;
 
 use Core\Product\Api\IO\Input\ProductInput;
 use Core\Product\Application\Command\CreateProduct\CreateProductCommand;
-use Core\Shared\Application\CommandBus\CommandBus;
+use Core\Product\Application\CommandBus\CommandBus;
 
 final readonly class InternalProductApi implements ProductApi
 {

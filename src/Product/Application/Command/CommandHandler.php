@@ -1,6 +1,6 @@
 <?php
 
-namespace Core\Shared\Application\Command;
+namespace Core\Product\Application\Command;
 
 interface CommandHandler
 {

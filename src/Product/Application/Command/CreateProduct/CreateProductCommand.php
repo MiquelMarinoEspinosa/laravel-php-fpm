@@ -2,7 +2,7 @@
 
 namespace Core\Product\Application\Command\CreateProduct;
 
-use Core\Shared\Application\Command\Command;
+use Core\Product\Application\Command\Command;
 
 final readonly class CreateProductCommand implements Command
 {
