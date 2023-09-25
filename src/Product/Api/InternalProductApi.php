@@ -4,12 +4,12 @@ namespace Core\Product\Api;
 
 use Core\Product\Api\IO\Input\ProductInput;
 use Core\Product\Application\Command\CreateProduct\CreateProductCommand;
-use Core\Product\Application\Command\CreateProduct\CreateProductCommandHandler;
+use Core\Shared\Application\CommandBus\CommandBus;
 
 final readonly class InternalProductApi implements ProductApi
 {
     public function __construct(
-        private CreateProductCommandHandler $createProductCommandHandler
+        private CommandBus $commandBus
     ) {
     }
 
@@ -23,6 +23,6 @@ final readonly class InternalProductApi implements ProductApi
             $productInput->quantity()
         );
 
-        ($this->createProductCommandHandler)($command);
+        $this->commandBus->dispatch($command);
     }
 }
