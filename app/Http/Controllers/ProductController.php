@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use Core\Product\Api\IO\Input\ProductInput;
 use Core\Product\Api\ProductApi;
 use Illuminate\Http\Request;

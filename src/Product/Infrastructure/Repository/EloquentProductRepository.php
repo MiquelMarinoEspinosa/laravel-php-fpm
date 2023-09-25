@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Product\Infrastructure\Repository;
 
 use App\Models\Product as EloquentProduct;

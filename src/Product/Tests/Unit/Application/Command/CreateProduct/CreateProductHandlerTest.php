@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Tests\Unit\Application\Command\CreateProduct;
 
 use PHPUnit\Framework\TestCase;

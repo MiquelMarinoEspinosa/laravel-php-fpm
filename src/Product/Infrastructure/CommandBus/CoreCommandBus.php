@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Product\Infrastructure\CommandBus;
 
 use Core\Product\Application\Command\CreateProduct\CreateProductCommand;
