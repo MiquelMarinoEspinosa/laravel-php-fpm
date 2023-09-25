@@ -2,8 +2,8 @@
 
 namespace Core\Product\Application\Command\CreateProduct;
 
-use Core\Product\Application\Command\Command;
-use Core\Product\Application\Command\CommandHandler;
+use Core\Shared\Application\Command\Command;
+use Core\Shared\Application\Command\CommandHandler;
 
 final readonly class CreateProductCommandHandler implements CommandHandler
 {
