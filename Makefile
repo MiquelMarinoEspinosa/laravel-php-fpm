@@ -28,8 +28,16 @@ dump-autoload:
 unit:
 	$(SH_PHP) vendor/bin/phpunit --testsuite Unit
 
-integration:
-	$(SH_PHP) vendor/bin/phpunit --testsuite Integration
+db-test-create:
+	$(SH_PHP) php artisan migrate --env=testing
 
-coverage:
+db-test-rollback:
+	$(SH_PHP) php artisan migrate:rollback --env=testing
+
+integration: db-test-create
+	$(SH_PHP) vendor/bin/phpunit --testsuite Integration
+	make db-test-rollback
+
+coverage: db-test-create
 	$(SH_PHP) vendor/bin/phpunit --testsuite Unit,Integration --coverage-html coverage
+	make db-test-rollback

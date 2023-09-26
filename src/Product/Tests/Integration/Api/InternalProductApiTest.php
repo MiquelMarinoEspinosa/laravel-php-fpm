@@ -4,7 +4,6 @@ namespace Core\Product\Tests\Integration\Api;
 
 use Core\Product\Api\IO\Input\ProductInput;
 use Core\Product\Api\ProductApi;
-
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
