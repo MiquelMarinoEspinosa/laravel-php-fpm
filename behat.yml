@@ -1,0 +1,7 @@
+default:
+  suites:
+    default:
+      paths:
+        - "./src/Product/Tests/Acceptance/Behat/Features"
+      contexts:
+        - Core\Product\Tests\Acceptance\Behat\Features\ProductContext

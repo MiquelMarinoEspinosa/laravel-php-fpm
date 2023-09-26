@@ -1,13 +1,16 @@
 <?php
 
+namespace Core\Product\Tests\Acceptance\Behat\Features;
+
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Tests\TestCase;
 
 /**
  * Defines application features from the specific context.
  */
-class FeatureContext implements Context
+final class ProductContext extends TestCase implements Context
 {
     /**
      * Initializes context.
@@ -18,5 +21,13 @@ class FeatureContext implements Context
      */
     public function __construct()
     {
+    }
+
+    /**
+     * @Given a Product
+     */
+    public function aProduct()
+    {
+        dd('hello');
     }
 }

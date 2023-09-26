@@ -41,3 +41,6 @@ integration: db-test-create
 coverage: db-test-create
 	$(SH_PHP) vendor/bin/phpunit --testsuite Unit,Integration --coverage-html coverage
 	make db-test-rollback
+
+behat:
+	$(SH_PHP) vendor/bin/behat
