@@ -28,5 +28,8 @@ dump-autoload:
 unit:
 	$(SH_PHP) vendor/bin/phpunit --testsuite Unit
 
+integration:
+	$(SH_PHP) vendor/bin/phpunit --testsuite Integration
+
 coverage:
-	$(SH_PHP) vendor/bin/phpunit --testsuite Unit --coverage-html coverage
+	$(SH_PHP) vendor/bin/phpunit --testsuite Unit,Integration --coverage-html coverage
