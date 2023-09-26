@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Product\Tests\Integration\Api;
 
 use Core\Product\Api\IO\Input\ProductInput;
@@ -14,7 +16,7 @@ final class InternalProductApiTest extends TestCase
 
     protected function setUp(): void
     {
-        $this->createApplication();
+        parent::setUp();
         $this->productApi = App::make(ProductApi::class);
     }
 
