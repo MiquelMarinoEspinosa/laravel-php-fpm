@@ -15,14 +15,15 @@
         <testsuite name="Integration">
             <directory>src/*/Tests/Integration</directory>
         </testsuite>
+        <testsuite name="Acceptance">
+            <directory>src/*/Tests/Acceptance/PhpUnit</directory>
+        </testsuite>
     </testsuites>
 
     <source>
         <include>
-            <directory suffix=".php">src/*/Api</directory>
-            <directory suffix=".php">src/*/Domain</directory>
-            <directory suffix=".php">src/*/Application</directory>
-            <directory suffix=".php">src/*/Infrastructure</directory>
+            <directory suffix=".php">src</directory>
+            <directory suffix=".php">app</directory>
         </include>
     </source>
     <php>
