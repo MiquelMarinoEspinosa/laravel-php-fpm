@@ -6,8 +6,6 @@ services:
     container_name: app.php-fpm
     volumes:
       - ".:/app"
-    networks:
-      - laravel-php-fpm
     
   nginx:
     build:
@@ -18,8 +16,6 @@ services:
     #   - "./assets:/var/www/"
     ports:
       - 80:80
-    networks:
-      - laravel-php-fpm
 
   # redis:
   #   build:
@@ -35,14 +31,9 @@ services:
     image: app/mariadb
     container_name: app.mariadb
     environment:
-      MARIADB_DATABASE: laravel
-      MARIADB_USER: laravel
-      MARIADB_PASSWORD: laravel
       MARIADB_ROOT_PASSWORD: toor
     ports:
       - 3306:3306
-    networks:
-      - laravel-php-fpm
 
   # swagger_ui:
   #   environment:
@@ -54,5 +45,3 @@ services:
   #     - "./assets/docs/users-api.yml:/usr/share/nginx/html/users-api.yml"
   #   ports:
   #     - 8080:8080
-networks:
-  laravel-php-fpm:
