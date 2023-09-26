@@ -5,27 +5,19 @@
          colors="true"
 >
     <testsuites>
-        <testsuite name="Unit">
+        <testsuite name="Laravel">
             <directory>tests/Unit</directory>
-        </testsuite>
-        <testsuite name="Feature">
             <directory>tests/Feature</directory>
         </testsuite>
-        <testsuite name="Core">
-            <directory>src</directory>
+        <testsuite name="Unit">
+            <directory>src/*/Tests/Unit</directory>
         </testsuite>
     </testsuites>
 
-    <!-- <coverage>
-        <include>
-          <directory suffix=".php">src/Product/Domain</directory>
-          <directory suffix=".php">src/Product/Application</directory>
-        </include>
-    </coverage> -->
-    
     <source>
         <include>
-            <directory>app</directory>
+            <directory suffix=".php">src/*/Domain</directory>
+            <directory suffix=".php">src/*/Application</directory>
         </include>
     </source>
     <php>

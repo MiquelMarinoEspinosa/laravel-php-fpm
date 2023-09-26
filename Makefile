@@ -1,3 +1,5 @@
+.PHONY: coverage
+
 SH_PHP=docker exec -i -t app.php-fpm
 
 up: 
@@ -24,7 +26,7 @@ dump-autoload:
 	$(SH_PHP) php composer.phar dump-autoload
 
 unit:
-	$(SH_PHP) vendor/bin/phpunit --testsuite Core
+	$(SH_PHP) vendor/bin/phpunit --testsuite Unit
 
 coverage:
-	$(SH_PHP) vendor/bin/phpunit --testsuite Core --coverage-html coverage
+	$(SH_PHP) vendor/bin/phpunit --testsuite Unit --coverage-html coverage
