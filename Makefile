@@ -24,4 +24,7 @@ dump-autoload:
 	$(SH_PHP) php composer.phar dump-autoload
 
 unit:
-	$(SH_PHP) vendor/phpunit/phpunit/phpunit
+	$(SH_PHP) vendor/bin/phpunit --testsuite Core
+
+coverage:
+	$(SH_PHP) vendor/bin/phpunit --testsuite Core --coverage-html coverage

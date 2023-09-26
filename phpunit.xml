@@ -10,9 +10,19 @@
         </testsuite>
         <testsuite name="Feature">
             <directory>tests/Feature</directory>
+        </testsuite>
+        <testsuite name="Core">
             <directory>src</directory>
         </testsuite>
     </testsuites>
+
+    <!-- <coverage>
+        <include>
+          <directory suffix=".php">src/Product/Domain</directory>
+          <directory suffix=".php">src/Product/Application</directory>
+        </include>
+    </coverage> -->
+    
     <source>
         <include>
             <directory>app</directory>
