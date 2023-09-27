@@ -3,7 +3,7 @@ info:
   title: "Product API"
   version: "0.1"
 servers:
-  - url: "http://localhost"
+  - url: "http://localhost/api"
 paths:
   /product:
     post:
@@ -19,13 +19,28 @@ paths:
                 name:
                   description: "Product name"
                   type: string
-                password:
-                  description: "Product password"
+                sku:
+                  description: "Product sku"
                   type: string
+                description:
+                  description: "Product description"
+                  type: string
+                price:
+                  description: "Product price"
+                  type: number
+                  format: float
+                quantity:
+                  description: "Product quantity"
+                  type: integer
+                  format: int32
               type: object
       responses:
         "201":
           description: "Product created"
+          content:
+            application/json:
+              schema:
+                type: null
           #content:
           #  application/json:
           #    schema:
