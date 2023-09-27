@@ -42,10 +42,15 @@ acceptance: db-test-create
 	$(SH_PHP) vendor/bin/phpunit --testsuite Acceptance
 	make db-test-rollback
 
+tests: db-test-create
+	$(SH_PHP) vendor/bin/phpunit --testsuite Unit,Integration,Acceptance
+	make db-test-rollback
+
 coverage: db-test-create
 	$(SH_PHP) vendor/bin/phpunit --testsuite Unit,Integration,Acceptance --coverage-html coverage
 	make db-test-rollback
 
-behat:
+behat: db-test-create
 	$(SH_PHP) vendor/bin/behat
+	make db-test-rollback
 
