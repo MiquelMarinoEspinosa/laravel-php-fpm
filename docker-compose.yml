@@ -12,8 +12,8 @@ services:
       context: etc/devel/docker/nginx
     image: app/nginx
     container_name: app.nginx
-    # volumes:
-    #   - "./assets:/var/www/"
+    volumes:
+       - "./assets:/var/www/"
     ports:
       - 80:80
 
@@ -35,13 +35,13 @@ services:
     ports:
       - 3306:3306
 
-  # swagger_ui:
-  #   environment:
-  #     - SWAGGER_JSON=./assets/docs/users-api.yml
-  #     - API_URL=http://localhost/docs/users-api.yml
-  #   image: swaggerapi/swagger-ui
-  #   container_name: app.swagger
-  #   volumes:
-  #     - "./assets/docs/users-api.yml:/usr/share/nginx/html/users-api.yml"
-  #   ports:
-  #     - 8080:8080
+  swagger_ui:
+    environment:
+      - SWAGGER_JSON=./assets/docs/product-api.yml
+      - API_URL=http://localhost/docs/product-api.yml
+    image: swaggerapi/swagger-ui
+    container_name: app.swagger
+    volumes:
+      - "./assets/docs/product-api.yml:/usr/share/nginx/html/product-api.yml"
+    ports:
+      - 8080:8080
