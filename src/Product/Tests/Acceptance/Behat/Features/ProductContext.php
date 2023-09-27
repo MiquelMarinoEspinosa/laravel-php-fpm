@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Core\Product\Tests\Acceptance\Behat\Features;
 
 use Behat\Behat\Context\Context;
