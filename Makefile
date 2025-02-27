@@ -3,10 +3,10 @@
 SH_PHP=docker exec -i -t app.php-fpm
 
 up: 
-	docker-compose up
+	docker compose up
 
 down:
-	docker-compose down
+	docker compose down
 
 bash:
 	$(SH_PHP) sh
