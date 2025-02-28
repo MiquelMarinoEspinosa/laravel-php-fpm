@@ -6,6 +6,9 @@ namespace Core\Product\Tests\Acceptance\Behat\Features;
 
 use Behat\Behat\Context\Context;
 use Behat\Gherkin\Node\TableNode;
+use Behat\Step\Given;
+use Behat\Step\Then;
+use Behat\Step\When;
 
 final class ProductContext implements Context
 {
@@ -13,17 +16,13 @@ final class ProductContext implements Context
     private string | bool $response;
     private mixed $httpCode;
 
-    /**
-     * @Given a product data
-     */
+    #[Given('a product data')]
     public function aProduct(TableNode $table): void
     {
         $this->productData = $table->getColumnsHash()[0];
     }
 
-    /**
-     * @When make the create product request
-     */
+    #[When('make the create product request')]
     public function makeTheCreateProductRequest(): void
     {
         $data = [
@@ -61,9 +60,7 @@ final class ProductContext implements Context
         curl_close($ch);
     }
 
-    /**
-     * @Then the product should have been created
-     */
+    #[Then('the product should have been created')]
     public function theUserHasBeenCreated(): void
     {
         if (false === $this->response || $this->httpCode !== 201) {
