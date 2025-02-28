@@ -1,12 +1,16 @@
 .PHONY: coverage
 
-SH_PHP=docker exec -i -t app.php-fpm
+SH_PHP=docker compose exec -i -t php-fpm
+
+build: 
+	docker compose build
 
 up: 
 	docker compose up
 
 down:
 	docker compose down
+	docker compose rm
 
 bash:
 	$(SH_PHP) sh
@@ -20,7 +24,7 @@ db:
 install:
 	$(SH_PHP) composer install
 
-build: install db
+config: install db
 
 dump-autoload:
 	$(SH_PHP) php composer.phar dump-autoload

@@ -20,3 +20,4 @@ laravel php fpm
     * make db-test-create
 * Execute the tests
     * make tests
+* Swagger documentation at http://localhost:8080
